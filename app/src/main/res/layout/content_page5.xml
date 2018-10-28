@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".page1"
+        tools:showIn="@layout/app_bar_page1"
+        >
+
+
+        <ImageView
+            android:layout_marginTop="22dp"
+            android:layout_width="408dp"
+            android:layout_height="286dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="30dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:src="@drawable/pic8800"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.050000012" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp">
+            <com.example.nabaa96.myapplicationnm.mytv
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="gravity"
+                android:text="@string/n5" />
+        </android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/but5"
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="اضاقه تعليق"
+
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="f"
+
+
+            />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/ra"
+            android:icon="@drawable/ic_na"
+            android:title="الرئيسية " />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_na"
+            android:title="تعريف المُخدّرات " />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_na"
+            android:title="أنواع المخدرات" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_na"
+            android:title="طرق تعاطي المخدرات " />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_na"
+            android:title="أنواع المُخدّرات حسب مصدرها" />
+
+        <item
+            android:id="@+id/a"
+            android:icon="@drawable/ic_na"
+            android:title="المواد المثبطه او المسكنه" />
+
+        <item
+            android:id="@+id/b"
+            android:icon="@drawable/ic_na"
+            android:title="أضرار المخدرات على الإنسان
+" />
+        <item
+            android:id="@+id/c"
+            android:icon="@drawable/ic_na"
+            android:title="أسباب الإدمان على المُخدّرات" />
+        <item
+            android:id="@+id/d"
+            android:icon="@drawable/ic_na"
+            android:title="عوامل انتشار المخدرات" />
+        <item
+            android:id="@+id/e"
+            android:icon="@drawable/ic_na"
+            android:title="الوقاية من المخدرات" />
+        <item
+            android:id="@+id/f"
+            android:icon="@drawable/ic_na"
+            android:title="خطوات علاج الإدمان" />
+        <item
+            android:id="@+id/f1"
+            android:icon="@drawable/ic_na"
+            android:title=" خروج " />
+    </group>
+
+    <item android:title=" ">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_na"
+                android:title="عن المؤسسة" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_na"
+                android:title="عن المطورين" />
+        </menu>
+    </item>
+
+</menu>
