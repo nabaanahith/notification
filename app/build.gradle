@@ -1,6 +1,7 @@
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
 apply plugin: 'com.android.application'
 
-apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -11,7 +12,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
-                onesignal_app_id: 'd4c22182-dd8e-4490-8e6c-e46dd2bd2eb1',
+                onesignal_app_id               : 'd4c22182-dd8e-4490-8e6c-e46dd2bd2eb1',
                 // Project number pulled from dashboard, local value is ignored.
                 onesignal_google_project_number: 'REMOTE'
         ]
@@ -40,6 +41,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.3'
     testImplementation 'junit:junit:4.12'
     implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

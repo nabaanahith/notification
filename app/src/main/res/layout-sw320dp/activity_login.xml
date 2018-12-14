@@ -50,6 +50,25 @@
             android:padding="8dp"
             android:textColor="#9bb6bf"
             android:textColorHint="#9bb6bf" />
+        <EditText
+            android:id="@+id/e4"
+            android:layout_marginTop="20dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:background="#0164605D"
+            android:layout_gravity="left"
+            android:drawableRight="@drawable/ic_person"
+            android:drawablePadding="12dp"
+            android:ems="10"
+
+            android:hint="الاسم الثلاثي"
+            android:inputType="textEmailAddress"
+            android:layoutDirection="rtl"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:textColor="#9bb6bf"
+            android:textColorHint="#9bb6bf" />
        <!-- <View
             android:layout_width="290dp"
             android:layout_height="1dp"

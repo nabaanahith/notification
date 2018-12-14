@@ -1,6 +1,8 @@
 package com.example.nabaa96.myapplicationnm;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Comment {
@@ -9,17 +11,36 @@ public class Comment {
     String desc;
     String name;
     String id;
-    String  accept;
-  String time;
-int like;
+    String accept;
+    String time;
+    int like;
+    private List<String> likedUsers; // the users who lie this comment ok
 
-
-    public Comment(String desc, String name, String  accept, String  time, int like) {
+    public Comment(String desc, String name, String id, String accept, String time, int like, ArrayList<String> likedUsers) {
         this.desc = desc;
         this.name = name;
-this.accept=accept;
-this.time= time;
-this.like=like;
+        this.id = id;
+        this.accept = accept;
+        this.time = time;
+        this.like = like;
+        this.likedUsers = likedUsers;
+    }
+
+
+    public List<String> getLikedUsers() {
+        return likedUsers;
+    }
+
+    public void setLikedUsers(List<String> likedUsers) {
+        this.likedUsers = likedUsers;
+    }
+
+    public Comment(String desc, String name, String accept, String time, int like) {
+        this.desc = desc;
+        this.name = name;
+        this.accept = accept;
+        this.time = time;
+        this.like = like;
     }
 
     public Comment() {
@@ -52,9 +73,11 @@ this.like=like;
     public void setName(String name) {
         this.name = name;
     }
+
     public void setId(String id) {
         this.id = id;
     }
+
     public String getId() {
         return id;
     }
@@ -66,10 +89,6 @@ this.like=like;
 
     public void setAccept(String accept) {
         this.accept = accept;
-
-
-
-
     }
 
 

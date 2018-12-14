@@ -3,10 +3,7 @@
     <item android:state_pressed="true"
         android:drawable="@drawable/ic_like11"/>
     <item android:drawable="@drawable/ic_like"
-        android:state_enabled="true"
-
-
-        />
+        android:state_enabled="true" />
 
 </selector>
 

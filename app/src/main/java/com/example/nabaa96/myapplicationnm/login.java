@@ -33,6 +33,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class login extends AppCompatActivity {
@@ -45,7 +46,10 @@ public class login extends AppCompatActivity {
     FirebaseAuth mauth;
     CallbackManager mCallbackManager;
     ImageButton face;
+    EditText nameth;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
+    DatabaseReference mdatabase = database.getReference("users");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mCallbackManager = CallbackManager.Factory.create();
@@ -53,6 +57,7 @@ public class login extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        nameth=findViewById(R.id.e4);
         u=" ";
         a = findViewById(R.id.e1);
         a1 = findViewById(R.id.e2);
@@ -74,57 +79,62 @@ public class login extends AppCompatActivity {
             public void onClick(View v) {
 
                 String n1 = a1.getText().toString();
-                String n = a.getText().toString();
+                final String n = a.getText().toString();
+
                 if (n.equals("")) {
                     a.setError("must be not empty");
                 } else if (n1.equals("")) {
                     a1.setError("must be not empty");
                 }
+              if(nameth!=null) {
+
+                  mDatabase.addValueEventListener(new ValueEventListener() {
+                      String namethree = nameth.getText().toString();
+
+                      @Override
+                      public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                          for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                              String nameauth = postSnapshot.child("name").getValue().toString();
+                              Log.i("popup", "onDataChange: res des: " + postSnapshot.child("email").getValue().toString() + "s :");
+                              String emailauth = postSnapshot.child("email").getValue().toString();
+                              Log.i("popup", "onDataChange: emailauth: " + postSnapshot.child("email").getValue().toString() + "s :");
+                              if (emailauth.equals(n)) {
+                                  if (!(namethree.equals(nameauth))) {
+
+                                      nameth.setError("your name not correct!");
+                                      Toast.makeText(login.this, "your name not correct!", Toast.LENGTH_SHORT).show();
+
+
+                                  }
+                                  else {
+                                      userlogin();
+
+                                  }
+                              }
+                              else {
+                                  userlogin();
+
+                              }
+                              //   String describtion=postSnapshot.child("desc").getValue().toString();
+
+                              // String s= itm.accept("describtion");
+                          }
+                      }
+
+
+                      @Override
+                      public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                      }
+                  });
+
+
+              }
 
 
 
-
-     /*   a.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            String n = a.getText().toString();
-
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (a.getText().equals(" ")) {
-
-                    a.setError("feild cant be empity");
-                    return;
-                }
-                if (!Patterns.EMAIL_ADDRESS.matcher(n).matches()) {
-
-                    a.setError("please enter valid email ");
-                    return;
-                }
-
-
-            }
-        });
-
-
-        a1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            // String nn=a1.getText().toString();
-
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-
-                if (a1.getText().equals(" ")) {
-
-                    a1.setError("feild cant be empity");
-                }
-
-            }
-        });
-*/
-
-
-                else {
-
-                    userlogin();
-                }
             }
         });
 
@@ -135,16 +145,16 @@ public class login extends AppCompatActivity {
     private void userlogin() {
         final String n = a.getText().toString();
         final String nn = a1.getText().toString();
-
+        final String namet=nameth.getText().toString();
         mauth.signInWithEmailAndPassword(n, nn).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+            public void onComplete(@NonNull final Task<AuthResult> task) {
                 if (task.isSuccessful()) {
 
                     FirebaseUser user = mauth.getCurrentUser();
 
                     final String uid = user.getUid();
-                    mDatabase.child(uid+"/name").addValueEventListener(new ValueEventListener() {
+                    mDatabase.child(uid+"/toggle").addValueEventListener(new ValueEventListener() {
 
 //
                         @Override
@@ -157,15 +167,21 @@ public class login extends AppCompatActivity {
                                  u=mn;
                             Log.i(TAG, "onDataChange: u : "+u);
 
+                            String uid = task.getResult().getUser().getUid();
+                            HashMap<String,Object> userInfo=new HashMap<>();
+                            userInfo.put("name",namet);
+                            userInfo.put("email",n);
+                            userInfo.put("pass",nn);
+                            userInfo.put("toggle",mn);
+                            mdatabase.child(uid).setValue(userInfo);
 
 
 
-                            Intent i =new Intent(getBaseContext(),popup.class);
-                            i.putExtra("n",u);
+                            Intent i =new Intent(getBaseContext(),page1.class);
+                            i.putExtra("n",namet);
                             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(i);
-
-
+finish();
 
 
 

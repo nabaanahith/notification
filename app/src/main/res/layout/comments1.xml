@@ -75,10 +75,10 @@
         <ImageView
             android:id="@+id/img"
             android:layout_width="50dp"
-android:layout_gravity="end"
+            android:layout_gravity="end"
             android:layout_marginTop="-8dp"
             android:layout_height="15dp"
-            android:src="@drawable/bb" />
+            android:src="@drawable/ic_like" />
 
 
 

@@ -2,12 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dash"
+            android:icon="@drawable/ic_na"
+            android:title="لوحه التحكم " />
         <item
             android:id="@+id/ra"
             android:icon="@drawable/ic_na"
-            android:title="الرئيسية " />
+            android:title="الرئيسيه " />
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_na"
@@ -52,13 +55,23 @@
             android:icon="@drawable/ic_na"
             android:title="خطوات علاج الإدمان" />
         <item
+            android:id="@+id/reg"
+            android:icon="@drawable/ic_na"
+            android:title=" تسجيل " />
+
+        <item
             android:id="@+id/f1"
             android:icon="@drawable/ic_na"
             android:title=" خروج " />
+
     </group>
 
     <item android:title=" ">
         <menu>
+            <item
+                android:id="@+id/contact"
+                android:icon="@drawable/ic_na"
+                android:title=" اتصل بنا " />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_na"
@@ -66,7 +79,7 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_na"
-                android:title="عن المطورين" />
+                android:title="عن المبادره" />
         </menu>
     </item>
 

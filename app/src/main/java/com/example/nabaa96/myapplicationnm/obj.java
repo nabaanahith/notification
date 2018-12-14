@@ -1,7 +1,7 @@
 package com.example.nabaa96.myapplicationnm;
 
 public class obj {
-    String name,email,pass;
+    String name,email,pass,toggle;
 
 
     obj(){
@@ -9,17 +9,25 @@ public class obj {
 
     }
 
-    obj(String name,String email,String pass){
+    obj(String name,String email,String pass,String toggle){
 
 
         this.name=name;
         this.email=email;
         this.pass=pass;
+        this.toggle=toggle;
 
 
 
     }
 
+    public String getToggle() {
+        return toggle;
+    }
+
+    public void setToggle(String toggle) {
+        this.toggle = toggle;
+    }
 
     public String getName() {
         return name;

@@ -21,14 +21,14 @@
 
         <ImageView
             android:layout_width="408dp"
-            android:layout_height="286dp"
-            android:layout_marginTop="42dp"
+            android:layout_height="186dp"
+            android:layout_marginTop="82dp"
             android:adjustViewBounds="true"
             android:maxHeight="30dp"
             android:layout_gravity="center"
             android:foregroundGravity="center_horizontal"
             android:scrollbarAlwaysDrawHorizontalTrack="true"
-            android:src="@drawable/ic_about_us"
+            android:src="@drawable/log1"
           />
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,6 +41,17 @@
                 android:textAlignment="gravity"
                 android:text="@string/about" />
         </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="42dp"
+            android:adjustViewBounds="true"
+            android:foregroundGravity="center_horizontal"
+            android:maxHeight="30dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:src="@drawable/pic100" />
 
     </LinearLayout>
 </ScrollView>

@@ -1,10 +1,12 @@
 package com.example.nabaa96.myapplicationnm;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,7 +30,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+
 import com.example.nabaa96.myapplicationnm.dash;
+
+import static com.facebook.login.widget.ProfilePictureView.TAG;
+
 public class popup extends AppCompatActivity implements OnLikeCommentListener {
     private static final String TAG = "popup";
     DatabaseReference mDatabase;
@@ -89,10 +96,10 @@ public class popup extends AppCompatActivity implements OnLikeCommentListener {
 
                     Log.i("popup", "onDataChange: res des: " + postSnapshot.child("desc").getValue().toString() + "s :");
 
-                 //   String describtion=postSnapshot.child("desc").getValue().toString();
+                    //   String describtion=postSnapshot.child("desc").getValue().toString();
 
-                  String s = postSnapshot.child("accept").getValue().toString();
-                   // String s= itm.accept("describtion");
+                    String s = postSnapshot.child("accept").getValue().toString();
+                    // String s= itm.accept("describtion");
                     if (s.equals("1")) {
 
 
@@ -112,9 +119,10 @@ public class popup extends AppCompatActivity implements OnLikeCommentListener {
                         }
                     }
                 }
-                CommentsAdapter adepter = new CommentsAdapter(getBaseContext(), arraycom);
-                adepter.setOnLikeCommentListener(popup.this);
-                commentl.setAdapter(adepter);
+                CommentsAdapter adapter = new CommentsAdapter(getBaseContext(), arraycom);
+                adapter.setOnLikeCommentListener(popup.this);
+                adapter.setCurrentUserUid(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                commentl.setAdapter(adapter);
                 cc = arraycom.size();
                 c = 0;
 
@@ -132,28 +140,69 @@ public class popup extends AppCompatActivity implements OnLikeCommentListener {
     }
 
 
+
     public void sen(View view) {
-        String desc, name;
-        int yy;
-        desc = ed.getText().toString();
-        name = getIntent().getStringExtra("n");
-        Calendar c = Calendar.getInstance();
-        String time = DateFormat.getDateTimeInstance().format(c.getTime());
-        key = mDatabase.child("commentes").push().getKey();
+        final String[] desc = new String[1];
+        final String[] name = new String[1];
 
-        //  yy=oo(key,desc,name,time,yy);
-        comment = new Comment(desc, name, "0", time, 0);
-        comment.setId(key);
 
-        mDatabase.child(key).setValue(comment);
-        ed.setText(" ");
+        FirebaseAuth mauth;
+        mauth = FirebaseAuth.getInstance();
 
-        Toast.makeText(popup.this, " your comment will appear when admin approve.",
-                Toast.LENGTH_SHORT).show();
+        final String[] u = new String[1];
+
+        final DatabaseReference mDatabase;
+        final DatabaseReference mDatabase2;
+        mauth = FirebaseAuth.getInstance();
+        mDatabase2 = FirebaseDatabase.getInstance().getReference("users");
+        mDatabase = FirebaseDatabase.getInstance().getReference("commentes");
+        FirebaseUser user = mauth.getCurrentUser();
+        final String[] mn = {" "};
+        if (mauth.getCurrentUser() != null) {
+            final String uid = user.getUid();
+            mDatabase2.child(uid + "/name").addValueEventListener(new ValueEventListener() {
+
+                //
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    mn[0] = dataSnapshot.getValue(String.class);
+                    Log.i(TAG, "onDataChange: " + dataSnapshot.toString());
+                    Log.i(TAG, "onDataChange: name :" + mn[0]);
+                    Log.i(TAG, "onDataChange: Uid : " + uid);
+                    int yy;
+                    desc[0] = ed.getText().toString();
+                    name[0] = mn[0];
+                    Calendar c = Calendar.getInstance();
+                    String time = DateFormat.getDateTimeInstance().format(c.getTime());
+                    key = mDatabase.child("commentes").push().getKey();
+
+                    //  yy=oo(key,desc,name,time,yy);
+                    comment = new Comment(desc[0], name[0], "0", time, 0);
+                    comment.setLikedUsers(new ArrayList<String>());
+                    comment.setId(key);
+
+                    mDatabase.child(key).setValue(comment);
+                    ed.setText(" ");
+
+                    Toast.makeText(popup.this, " your comment will appear when admin approve.",
+                            Toast.LENGTH_SHORT).show();
 //dash itm=new dash();
-       // String s= itm.accept(comment.getDesc());
-    }
+                    // String s= itm.accept(comment.getDesc());
+                    u[0] = mn[0];
 
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
+        }
+    }
 
     public void oo(final String kk, final String desc, final String name, String acc, final String time) {
 
@@ -194,15 +243,24 @@ public class popup extends AppCompatActivity implements OnLikeCommentListener {
         // TODO: 24/10/18  increment likes count
 // hooon tamam !! ?yes ok;):d
         // TODO: 24/10/18  update likes of commnet on firebase
+        List<String> likedUsers = comment.getLikedUsers();
+        if (likedUsers == null)
+            likedUsers = new ArrayList<>(); // because in first time no one like this comment so list is null ok ok
+
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        if (!likedUsers.contains(uid)) // check again if the user is not in the list ok ok
+            likedUsers.add(uid);
+
 
         HashMap<String, Object> childrens = new HashMap<>();
 
         childrens.put("like", comment.like++);
         // hon name faqt test ok ok
-        childrens.put("name", FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yy-mm-dd 'at' hh:mm:ss");
 
         childrens.put("lastUpdate", dateFormat.format(new Date()));
+
+        childrens.put("likedUsers", likedUsers);
 
         mDatabase.child(comment.id).updateChildren(childrens).addOnSuccessListener(new OnSuccessListener<Void>() {
 
