@@ -254,7 +254,28 @@ public class page2 extends AppCompatActivity
             final Intent i2 = new Intent(getBaseContext(), page1.class);
             startActivity(i2);
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        }
+        else if (id == R.id.aboutapp) {
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+
+        }
+
+        else if (id == R.id.aboutapp) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+        }
+        else if (id == R.id.aboutapp2) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutappnotcopy.class);
+            startActivity(i2);
+
+        }
+
+        else if (id == R.id.nav_gallery) {
             final Intent i2 = new Intent(getBaseContext(), page2.class);
             startActivity(i2);
 

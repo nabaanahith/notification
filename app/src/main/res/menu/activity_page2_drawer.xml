@@ -83,7 +83,15 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_na"
-                android:title="عن المبادره" />
+                android:title="عن المبادرة" />
+            <item
+                android:id="@+id/aboutapp"
+                android:icon="@drawable/ic_na"
+                android:title="عن المطورين" />
+            <item
+                android:id="@+id/aboutapp2"
+                android:icon="@drawable/ic_na"
+                android:title="عن التطبيق" />
         </menu>
     </item>
 

@@ -251,7 +251,25 @@ public class page5 extends AppCompatActivity
             final Intent i2 = new Intent(getBaseContext(), page2.class);
             startActivity(i2);
 
-        } else if (id == R.id.nav_slideshow) {
+        }
+        else if (id == R.id.aboutapp) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+        }
+        else if (id == R.id.aboutapp2) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutappnotcopy.class);
+            startActivity(i2);
+
+        }
+        else if (id == R.id.aboutapp) {
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+
+        }else if (id == R.id.nav_slideshow) {
             final Intent i2 = new Intent(getBaseContext(), page3.class);
             startActivity(i2);
 

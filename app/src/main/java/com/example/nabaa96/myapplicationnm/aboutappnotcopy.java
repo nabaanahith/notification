@@ -1,7 +1,6 @@
 package com.example.nabaa96.myapplicationnm;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -29,23 +28,27 @@ import com.google.firebase.database.ValueEventListener;
 
 import static com.facebook.login.widget.ProfilePictureView.TAG;
 
-public class page4 extends AppCompatActivity
+public class aboutappnotcopy extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Button btn;
     FirebaseAuth mauth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page4);
+        setContentView(R.layout.activity_aboutappnotcopy);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mauth = FirebaseAuth.getInstance();
+        NavigationView navigationView21;
+        navigationView21 = (NavigationView) findViewById(R.id.nav_view);
+        Menu nav_Menu21 = navigationView21.getMenu();
+        nav_Menu21.findItem(R.id.dash).setVisible(false);
         NavigationView navigationVieww;
         navigationVieww = (NavigationView) findViewById(R.id.nav_view);
         Menu nav_Menu3w = navigationVieww.getMenu();
         nav_Menu3w.findItem(R.id.dash).setVisible(false);
         nav_Menu3w.findItem(R.id.logout).setVisible(false);
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,9 +64,14 @@ public class page4 extends AppCompatActivity
 
 
             }
-        });*/
+        });
 
-        btn = findViewById(R.id.but4);
+*/
+
+
+        Button btn;
+
+        btn = findViewById(R.id.but10);
         mauth = FirebaseAuth.getInstance();
 
         final String[] u = new String[1];
@@ -115,11 +123,13 @@ public class page4 extends AppCompatActivity
                         navigationView2 = (NavigationView) findViewById(R.id.nav_view);
                         Menu nav_Menu2 = navigationView2.getMenu();
                         nav_Menu2.findItem(R.id.dash).setVisible(true);
+                        nav_Menu2.findItem(R.id.logout).setVisible(true);
                     } else {
                         NavigationView navigationView3;
                         navigationView3 = (NavigationView) findViewById(R.id.nav_view);
                         Menu nav_Menu3 = navigationView3.getMenu();
                         nav_Menu3.findItem(R.id.dash).setVisible(false);
+                        nav_Menu3.findItem(R.id.logout).setVisible(true);
                     }
 
                 }
@@ -131,6 +141,15 @@ public class page4 extends AppCompatActivity
 
             });
         }
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+*/
         final FirebaseUser firebaseUser =mauth.getCurrentUser();
         if (firebaseUser != null) {
             NavigationView navigationView;
@@ -140,23 +159,23 @@ public class page4 extends AppCompatActivity
             nav_Menu.findItem(R.id.logout).setVisible(true);
             String adminemail = firebaseUser.getEmail();
             Log.i(TAG, "onDataChange: adminemail : " + adminemail);
-            String emaill = getIntent().getStringExtra(registeration.emailll);
             NavigationView uu;
             uu = (NavigationView) findViewById(R.id.nav_view);
 
             View jj = uu.getHeaderView(0);
             TextView yy = jj.findViewById(R.id.textViewgmail);
             yy.setText(adminemail);
-            if (emaill == null) {
-                emaill = " ";
-
+            String  emaill=getIntent().getStringExtra(registeration.emailll);
+            if(emaill==null){
+                emaill=" ";
             }
-           /* if (adminemail.equals("nabaa@gmail.com") || emaill.equals("nabaa@gmail.com")) {
+           /* if (adminemail.equals("nabaa@gmail.com")||emaill.equals("nabaa@gmail.com")) {
                 NavigationView navigationView2;
                 navigationView2 = (NavigationView) findViewById(R.id.nav_view);
                 Menu nav_Menu2 = navigationView2.getMenu();
                 nav_Menu2.findItem(R.id.dash).setVisible(true);
-            } else {
+            }
+            else {
                 NavigationView navigationView3;
                 navigationView3 = (NavigationView) findViewById(R.id.nav_view);
                 Menu nav_Menu3 = navigationView3.getMenu();
@@ -172,22 +191,6 @@ public class page4 extends AppCompatActivity
             yy.setText(" ");
 
         }
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (firebaseUser == null) {
-
-                    Intent i = new Intent(getBaseContext(), login.class);
-                    startActivity(i);
-                }
-                else{
-                    Intent ii = new Intent(getBaseContext(), popup4.class);
-                    ii.putExtra("n", u[0]);
-                    startActivity(ii);}
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -211,7 +214,7 @@ public class page4 extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.page4, menu);
+        getMenuInflater().inflate(R.menu.aboutme, menu);
         return true;
     }
 
@@ -248,14 +251,29 @@ public class page4 extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             final Intent i2 = new Intent(getBaseContext(), page2.class);
             startActivity(i2);
-        }
 
-            else if (id == R.id.aboutapp) {
-                final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
-                startActivity(i2);
-
+        } else if (id == R.id.nav_slideshow) {
+            final Intent i2 = new Intent(getBaseContext(), page3.class);
+            startActivity(i2);
 
         }
+        else if (id == R.id.aboutapp) {
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+
+        }
+
+
+
+        else if (id == R.id.nav_send) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutme.class);
+            startActivity(i2);
+
+        }
+
+
         else if (id == R.id.aboutapp) {
 
             final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
@@ -267,11 +285,11 @@ public class page4 extends AppCompatActivity
             final Intent i2 = new Intent(getBaseContext(), aboutappnotcopy.class);
             startActivity(i2);
 
-        }else if (id == R.id.nav_slideshow) {
-            final Intent i2 = new Intent(getBaseContext(), page3.class);
-            startActivity(i2);
+        }
 
-        } else if (id == R.id.nav_manage) {
+
+
+        else if (id == R.id.nav_manage) {
             final Intent i2 = new Intent(getBaseContext(), page4.class);
             startActivity(i2);
         } else if (id == R.id.a) {
@@ -280,12 +298,7 @@ public class page4 extends AppCompatActivity
 
         }
 
-        else if (id == R.id.nav_send) {
 
-            final Intent i2 = new Intent(getBaseContext(), aboutme.class);
-            startActivity(i2);
-
-        }
 
 
 
@@ -318,7 +331,17 @@ public class page4 extends AppCompatActivity
 
 
 
+        else if (id == R.id.logout) {
 
+            mauth.signOut();
+            NavigationView navigationView2;
+            navigationView2 = (NavigationView) findViewById(R.id.nav_view);
+            Menu nav_Menu2 = navigationView2.getMenu();
+            nav_Menu2.findItem(R.id.dash).setVisible(false);
+            Intent i= new Intent(getBaseContext(),MainActivity.class);
+            startActivity(i);
+
+        }
 
 
 
@@ -379,4 +402,6 @@ public class page4 extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;}}
+        return true;
+    }
+}

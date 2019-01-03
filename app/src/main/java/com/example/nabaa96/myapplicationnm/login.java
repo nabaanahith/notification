@@ -113,10 +113,7 @@ public class login extends AppCompatActivity {
 
                                   }
                               }
-                              else {
-                                  userlogin();
 
-                              }
                               //   String describtion=postSnapshot.child("desc").getValue().toString();
 
                               // String s= itm.accept("describtion");

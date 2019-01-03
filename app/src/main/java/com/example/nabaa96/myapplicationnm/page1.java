@@ -60,7 +60,7 @@ public class page1 extends AppCompatActivity
         final String[] u = new String[1];
 
         DatabaseReference mDatabase;
-
+//
         mauth = FirebaseAuth.getInstance();
 
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
@@ -251,7 +251,8 @@ public class page1 extends AppCompatActivity
             final Intent i2 = new Intent(getBaseContext(), page3.class);
             startActivity(i2);
 
-        } else if (id == R.id.nav_manage) {
+        }
+      else if (id == R.id.nav_manage) {
             final Intent i2 = new Intent(getBaseContext(), page4.class);
             startActivity(i2);
         } else if (id == R.id.a) {
@@ -262,6 +263,18 @@ public class page1 extends AppCompatActivity
         else if (id == R.id.nav_send) {
 
             final Intent i2 = new Intent(getBaseContext(), aboutme.class);
+            startActivity(i2);
+
+        }
+        else if (id == R.id.aboutapp) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+        }
+        else if (id == R.id.aboutapp2) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutappnotcopy.class);
             startActivity(i2);
 
         }

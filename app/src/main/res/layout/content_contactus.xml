@@ -44,6 +44,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
                         app:cardCornerRadius="10dp"
+
                         app:contentPaddingBottom="15dp"
                         app:contentPaddingLeft="15dp"
                         app:contentPaddingRight="15dp"

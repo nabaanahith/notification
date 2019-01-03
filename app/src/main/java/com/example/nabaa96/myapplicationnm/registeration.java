@@ -128,10 +128,10 @@ public static final String emailll="com.example.nabaa96.myapplicationnm.emailll"
 
 
 
-                            OneSignal.sendTag("user_id", email);
 
 
-                        //    sentnotification();
+
+                        //   // OneSignal.sendTag("user_id", email);  sentnotification();
 
 
 
@@ -148,13 +148,13 @@ public static final String emailll="com.example.nabaa96.myapplicationnm.emailll"
                           //  userInfo.put("age",23); // get age from user and replace it here*/
                             mdatabase.child(uid).setValue(n);
 
-                            Intent i =new Intent(getBaseContext(),page1.class);
-                            i.putExtra(namec,fulln);
-                            i.putExtra(emailll,email);
+                            Intent iii =new Intent(getBaseContext(),page1.class);
+                            iii.putExtra(namec,fulln);
+                            iii.putExtra(emailll,email);
 
                              //  i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                          startActivity(i);
-                            finish();
+                          startActivity(iii);
+
                             // Toast.makeText(registeration.this, b , Toast.LENGTH_SHORT).show();
 
                         } else {
@@ -177,7 +177,8 @@ public static final String emailll="com.example.nabaa96.myapplicationnm.emailll"
     AsyncTask.execute(new Runnable() {
         @Override
         public void run() {
-            int SDK_INT = Build.VERSION.SDK_INT;
+            int S
+            DK_INT = Build.VERSION.SDK_INT;
             if (SDK_INT > 8) {
 
 

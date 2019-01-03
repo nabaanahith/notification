@@ -134,7 +134,15 @@
         <activity
             android:name=".test"
             android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".aboutapp"
+            android:label="@string/title_activity_aboutapp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".aboutappnotcopy"
+            android:label="@string/title_activity_aboutappnotcopy"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

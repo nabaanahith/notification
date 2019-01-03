@@ -10,7 +10,7 @@
         <item
             android:id="@+id/ra"
             android:icon="@drawable/ic_na"
-            android:title="الرئيسيه " />
+            android:title="الرئيسية " />
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_na"
@@ -36,8 +36,7 @@
         <item
             android:id="@+id/b"
             android:icon="@drawable/ic_na"
-            android:title="أضرار المخدرات على الإنسان
-" />
+            android:title="أضرار المخدرات على الإنسان" />
         <item
             android:id="@+id/c"
             android:icon="@drawable/ic_na"
@@ -60,10 +59,14 @@
             android:title=" تسجيل " />
 
         <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_na"
+            android:title="تسجيل خروج " />
+
+        <item
             android:id="@+id/f1"
             android:icon="@drawable/ic_na"
             android:title=" خروج " />
-
     </group>
 
     <item android:title=" ">
@@ -72,14 +75,23 @@
                 android:id="@+id/contact"
                 android:icon="@drawable/ic_na"
                 android:title=" اتصل بنا " />
+
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_na"
-                android:title="عن المؤسسه" />
+                android:title="عن المؤسسة" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_na"
-                android:title="عن المبادره" />
+                android:title="عن المبادرة" />
+            <item
+                android:id="@+id/aboutapp"
+                android:icon="@drawable/ic_na"
+                android:title="عن المطورين" />
+            <item
+                android:id="@+id/aboutapp2"
+                android:icon="@drawable/ic_na"
+                android:title="عن التطبيق" />
         </menu>
     </item>
 

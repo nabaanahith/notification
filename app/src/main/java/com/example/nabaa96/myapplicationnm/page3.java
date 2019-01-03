@@ -266,6 +266,24 @@ Button btn;
             startActivity(i2);
 
         }
+        else if (id == R.id.aboutapp) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+        }
+        else if (id == R.id.aboutapp2) {
+
+            final Intent i2 = new Intent(getBaseContext(), aboutappnotcopy.class);
+            startActivity(i2);
+
+        }
+        else if (id == R.id.aboutapp) {
+            final Intent i2 = new Intent(getBaseContext(), aboutapp.class);
+            startActivity(i2);
+
+
+        }
         else if (id == R.id.nav_send) {
 
             final Intent i2 = new Intent(getBaseContext(), aboutme.class);

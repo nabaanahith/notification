@@ -62,7 +62,7 @@
             android:drawablePadding="12dp"
             android:ems="10"
 
-            android:hint="الاسم الثلاثي"
+            android:hint="الاسم "
             android:inputType="textEmailAddress"
             android:layoutDirection="rtl"
             android:maxLines="1"
