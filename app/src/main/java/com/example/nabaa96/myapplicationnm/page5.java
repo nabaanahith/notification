@@ -202,12 +202,10 @@ public class page5 extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        Intent i=new Intent(getBaseContext(),mann.class);
+        startActivity(i);
+        //setResult(RESULT_OK);
+        finish();
     }
 
     @Override
