@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.nabaa96.myapplicationnm">
+    package="com.codeforiraq.drug">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -124,7 +124,7 @@
         <activity android:name=".popup6" />
         <activity android:name=".popup7" />
         <activity android:name=".popup8" />
-        <activity android:name=".popup9" />
+        <activity android:name="popup9" />
         <activity android:name=".popup10" />
         <activity
             android:name=".contactus"

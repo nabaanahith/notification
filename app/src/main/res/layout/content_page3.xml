@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="30dp">
-<com.example.nabaa96.myapplicationnm.mytv
+<com.codeforiraq.drug.mytv
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="gravity"

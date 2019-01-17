@@ -1,11 +1,9 @@
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
-
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.nabaa96.myapplicationnm"
+        applicationId "com.codeforiraq.drug"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
