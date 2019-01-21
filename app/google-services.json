@@ -7,21 +7,15 @@
   },
   "client": [
     {
+
+
       "client_info": {
-        "mobilesdk_app_id": "1:716894683864:android:dd5a3db78d855893",
+        "mobilesdk_app_id": "1:716894683864:android:a153b1fea5b4e6a5",
         "android_client_info": {
-          "package_name": "com.codeforiraq.drug"
+          "package_name": "org.codeforiraq.drug"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "716894683864-gnphm4u5j88mvs4apdt5hqhuqb16n6da.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.codeforiraq.drug",
-            "certificate_hash": "9249fcdf79e942194ca6d79f2d504bb73cb23a34"
-          }
-        },
         {
           "client_id": "716894683864-stbidq4gg575jg923c4r4nvshmk4cg1j.apps.googleusercontent.com",
           "client_type": 3
@@ -37,13 +31,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "716894683864-stbidq4gg575jg923c4r4nvshmk4cg1j.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

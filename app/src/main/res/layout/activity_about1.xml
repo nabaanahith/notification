@@ -11,7 +11,7 @@
 
 
     <include
-        layout="@layout/app_bar_about1"
+        layout="@layout/content_about1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
