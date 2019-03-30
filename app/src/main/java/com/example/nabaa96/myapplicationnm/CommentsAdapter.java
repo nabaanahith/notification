@@ -1,8 +1,6 @@
 package com.example.nabaa96.myapplicationnm;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -19,13 +17,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.like.OnLikeListener;
 
 import com.example.nabaa96.myapplicationnm.callbacks.OnLikeCommentListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.like.LikeButton;
-import com.like.OnLikeListener;
 
 import java.util.ArrayList;
 

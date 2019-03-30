@@ -29,8 +29,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.facebook.login.widget.ProfilePictureView.TAG;
-
 public class popup8 extends AppCompatActivity implements OnLikeCommentListener {
     private static final String TAG = "popup";
     DatabaseReference mDatabase;

@@ -124,7 +124,7 @@
         <activity android:name=".popup6" />
         <activity android:name=".popup7" />
         <activity android:name=".popup8" />
-        <activity android:name=".popup9" />
+        <activity android:name="popup9" />
         <activity android:name=".popup10" />
         <activity
             android:name=".contactus"

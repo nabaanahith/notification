@@ -1,12 +1,9 @@
 package com.example.nabaa96.myapplicationnm;
 
 import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,10 +28,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
-import com.example.nabaa96.myapplicationnm.dash;
-
-import static com.facebook.login.widget.ProfilePictureView.TAG;
 
 public class popup extends AppCompatActivity implements OnLikeCommentListener {
     private static final String TAG = "popup";
